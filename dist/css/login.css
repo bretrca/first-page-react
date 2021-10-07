@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+#root {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: rgba(134, 131, 131, 0.548);
+}
+
+.Container {
+  display: -ms-grid;
+  display: grid;
+  margin: 5%;
+  padding: 10%;
+  width: 15rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border: 1px solid rgba(3, 114, 95, 0.692);
+  border-radius: 10%;
+  background-color: rgba(5, 126, 106, 0.616);
+  -webkit-box-shadow: 0.5rem 0 2rem rgba(2, 99, 86, 0.589);
+          box-shadow: 0.5rem 0 2rem rgba(2, 99, 86, 0.589);
+}
+
+.Container-register {
+  margin: 10%;
+  padding: 5%;
+}
+
+.Form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: large;
+}
+
+.Form-container input {
+  width: 90%;
+}
+
+.Form-element {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Form-element button {
+  width: 33%;
+  margin: 2%;
+  background: rgba(2, 82, 62, 0.664);
+  color: #fff;
+}
+
+.Button-submit {
+  width: 50% !important;
+}
+
+.Close-button {
+  border-radius: 20%;
+  width: 20%;
+  height: 2rem;
+  font-weight: bold;
+  font-size: large;
+  background: rgba(2, 82, 62, 0.664);
+  color: #fff;
+}
+/*# sourceMappingURL=login.css.map */

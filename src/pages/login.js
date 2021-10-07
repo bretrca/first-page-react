@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import "../css/login.sass";
+import "../css/login.scss";
 
 function Login() {
   const [isRegistring, setIsRegistring] = useState(true);
 
   return (
-    <div className="Form-container">
+   <div className="Container">
+        <div className="Form-container">
       {isRegistring ? (
         <>
           <h2> Please log in</h2>
@@ -40,6 +41,7 @@ function Login() {
         </>
       )}
     </div>
+   </div>
   );
 }
 
