@@ -1,7 +1,7 @@
 {
     "users":[
         {
-            "name":"admin",
+            "username":"admin",
             "surname":"admin1",
             "password":"827ccb0eea8a706c4c34a16891f84e7b",
             "email":"a@a.com"
