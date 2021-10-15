@@ -13,9 +13,10 @@ function Login() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
+
  function handleSubmit(e) {
     e.preventDefault();
-    iniciarSesion();
+   iniciarSesion();
 }
 async function iniciarSesion() {
     await axios
@@ -73,7 +74,7 @@ return (
               </button>
             </form>
             <div className="register-element">
-              <p onClick={toggleRegister}>
+              <p>
             
                 Do yo want to join us ? <a href="/register">Register</a>
               </p>
@@ -81,9 +82,8 @@ return (
           </>
         ) : (
           <>
-            {setIsRegistring(false)}
-            <h2> or register</h2>
-            {(window.location.href = "./register")}
+              <h2> or register</h2>
+           <Register/>
           </>
         )}
       </div>
