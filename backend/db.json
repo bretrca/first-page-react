@@ -1,10 +1,36 @@
 {
-    "users":[
-        {
-            "username":"admin",
-            "surname":"admin1",
-            "password":"827ccb0eea8a706c4c34a16891f84e7b",
-            "email":"a@a.com"
-        }
-    ]
+  "users": [
+    {
+      "username": "admin",
+      "surname": "admin1",
+      "password": "827ccb0eea8a706c4c34a16891f84e7b",
+      "email": "a@a.com",
+      "id": "3223i34ito34jt0934",
+      "hasConsented": true
+    },
+    {
+      "username": "brayan",
+      "surname": "trujillo",
+      "password1": "81dc9bdb52d04dc20036dbd8313ed055",
+      "password2": "81dc9bdb52d04dc20036dbd8313ed055",
+      "id": "44646cf9-e8e1-4c3c-9aaa-3c99cbb8eaa8",
+      "hasConsented": true
+    },
+    {
+      "username": "brayan",
+      "surname": "trujillo",
+      "password1": "81dc9bdb52d04dc20036dbd8313ed055",
+      "password2": "81dc9bdb52d04dc20036dbd8313ed055",
+      "id": "59d6e571-7a55-4f03-9f6a-a7ead763f710",
+      "hasConsented": true
+    },
+    {
+      "username": "edu",
+      "surname": "castro",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055",
+      "password2": "81dc9bdb52d04dc20036dbd8313ed055",
+      "id": "eadf2c49-c9d6-4cf5-a130-aa20b1fbb8f1",
+      "hasConsented": true
+    }
+  ]
 }

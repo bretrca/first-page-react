@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/login.scss";
 import axios from "axios";
 import md5 from "md5";
@@ -13,50 +13,54 @@ function Login() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
-
- function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-   iniciarSesion();
-}
-async function iniciarSesion() {
+    iniciarSesion();
+  }
+
+  async function iniciarSesion() {
     await axios
-    .get(baseUrl, {
+      .get(baseUrl, {
         params: { username: username, password: md5(password) },
-    })
-    .then((res) => {
+      })
+      .then((res) => {
         console.log(res);
         return res.data;
-    })
-    .then((res) => {
-        console.log(res);
+      })
+      .then((res) => {
+        // console.log(res);
         if (res.length > 0) {
-            let respuesta = res[0];
-            cookies.set("id", respuesta.id, { path: "/" });
-            cookies.set("username", respuesta.username, { path: "/" });
-            cookies.set("surname", respuesta.surname, { path: "/" });
-            cookies.set("email", respuesta.email, { path: "/" });
-            cookies.set("id", respuesta.id, { path: "/" });
-            alert(`Welcome ${respuesta.username}`);
-            window.location.href = "./principal";
+          let respuesta = res[0];
+          cookies.set("id", respuesta.id, { path: "/" });
+          cookies.set("username", respuesta.username, { path: "/" });
+          cookies.set("surname", respuesta.surname, { path: "/" });
+          cookies.set("email", respuesta.email, { path: "/" });
+          cookies.set("id", respuesta.id, { path: "/" });
+          window.location.href = "./principal";
         } else {
-            console.log("user not correct");
+          console.log("user not correct");
         }
-    })
-    .catch((error) => {
+      })
+      .catch((error) => {
         console.log(error);
-    });
-}
-function toggleRegister(){
-    setIsRegistring(false);//en un click hay que hacer un cambio de pantalla a la de login
-}
+      });
+  }
+  function stay() {
+    if (cookies.get("username")) {
+      window.location.href = "/principal";
+    }
+  }
+  useEffect(() => {
+    stay();
+  });
 
-return (
+  return (
     <div className="Container">
       <div className="Form-container">
         {isRegistring ? (
           <>
             <h2> Please log in</h2>
-            <form className="Form-element">
+            <form className="Form-element" onSubmit={handleSubmit}>
               <label>User</label>
               <input
                 type="text"
@@ -69,21 +73,21 @@ return (
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="password"
               />
-              <button type="submit" onSubmit={handleSubmit}>
-                Enter
+              <button className="Button-sumbit" type="submit">
+                Signin
               </button>
             </form>
             <div className="register-element">
               <p>
-            
-                Do yo want to join us ? <a href="/register">Register</a>
+                Do yo want to join us ? <a href="/register">Signup</a>
               </p>
             </div>
           </>
         ) : (
           <>
-              <h2> or register</h2>
-           <Register/>
+            {setIsRegistring(true)}
+            <h2> or register</h2>
+            <Register />
           </>
         )}
       </div>
